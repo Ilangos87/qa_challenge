@@ -32,8 +32,8 @@
 
 ```bash
 python -m venv .venv
-source venv/bin/activate   # Linux / macOS
-cd .venv\Scripts\activate      # Windows
+source .venv/bin/activate   # Linux / macOS
+.venv\Scripts\activate      # Windows
 ```
 
 4. **Install dependencies**
