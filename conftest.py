@@ -10,11 +10,15 @@ load_dotenv()
 def app_credentials():
     """Loads user credentials and site config from environment variables."""
 
-    username = os.getenv("APP_USERNAME")
-    password = os.getenv("APP_PASSWORD")
-    mfa_code = os.getenv("MFA_CODE")
-    site_url = os.getenv("SITE_URL")
-    api_url = os.getenv("API_URL")
+    def get_env(name: str) -> str:
+        value = os.getenv(name)
+        return value.strip()
+
+    username = get_env("APP_USERNAME")
+    password = get_env("APP_PASSWORD")
+    mfa_code = get_env("MFA_CODE")
+    site_url = get_env("SITE_URL")
+    api_url = get_env("API_URL")
     
 
     if not username or not password:
